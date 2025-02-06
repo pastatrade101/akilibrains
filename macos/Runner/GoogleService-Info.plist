@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>566559401387-i3rh1qr5q9mmeqtrftvibqo20r0ogrf8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.566559401387-i3rh1qr5q9mmeqtrftvibqo20r0ogrf8</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>566559401387-m5k0p9irjeat3ltbneiiobh7ofpa5a1i.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD0UV64NaGh_aPz7YOW3DlDcvCumeBkhxg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>566559401387</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.rabitStore.RunnerTests</string>
+	<key>PROJECT_ID</key>
+	<string>rabit-store</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rabit-store.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:566559401387:ios:5afe4003bd4615685a9eee</string>
+</dict>
+</plist>

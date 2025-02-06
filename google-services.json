@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "566559401387",
+    "firebase_url": "https://rabit-store-default-rtdb.firebaseio.com",
+    "project_id": "rabit-store",
+    "storage_bucket": "rabit-store.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:566559401387:android:f338b8e8668269aa5a9eee",
+        "android_client_info": {
+          "package_name": "com.pastory.trade101"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "566559401387-bbh4nuh5rhtetrso4a0gp0bc5pnkbuvi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIY6xnvbEqoCT1TwhOLi3V_yKMzQ6c7Xc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "566559401387-bbh4nuh5rhtetrso4a0gp0bc5pnkbuvi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "566559401387-2cc1qii03u3trb27ta4j8bocl8669c0s.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pastory.com.iostrade101"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

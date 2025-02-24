@@ -95,6 +95,7 @@ class BoughtBooksPdfView extends StatelessWidget {
         } else {
           return FloatingActionButton(
             onPressed: () {
+
               downloadController.downloadFile(pdfUrl,title!);
             },
             backgroundColor: Colors.blue,
@@ -173,6 +174,7 @@ class BoughtBooksPdfView extends StatelessWidget {
                               width: 100,
                               child: ElevatedButton(
                                 onPressed: () async {
+
                                   Navigator.of(context).pop();
                                   Get.offAll(PaymentPage(
                                     title: '$title',

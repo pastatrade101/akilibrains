@@ -65,6 +65,9 @@ dependencies:
   device_info_plus: ^9.0.2
 
 
+
+
+
   # Icons
   iconsax: ^0.0.8
   cupertino_icons: ^1.0.2
@@ -101,6 +104,10 @@ dependencies:
   flutter_local_notifications: ^17.1.1
   flutter_typeahead: ^5.2.0
   syncfusion_flutter_pdf: ^25.2.7
+  file_picker: ^8.0.0+1
+  path: ^1.8.3
+  package_info_plus: ^4.2.0
+  open_file: ^3.3.2
 
 
 

@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:dio/dio.dart';
 import 'package:dio/dio.dart' as dt;
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -116,7 +117,7 @@ class PdfViewController extends GetxController {
       fileName += '.pdf';
     }
 
-    // Check and request storage permission
+    // Request storage permission
     if (Platform.isAndroid) {
       bool permissionGranted = await requestStoragePermission();
       if (!permissionGranted) {
@@ -124,23 +125,21 @@ class PdfViewController extends GetxController {
       }
     }
 
-    // Get the Downloads directory
-    Directory? directory;
-    if (Platform.isAndroid) {
-      directory = Directory('/storage/emulated/0/Download');
-      if (!await directory.exists()) {
-        directory = await getExternalStorageDirectory();
-      }
-    } else if (Platform.isIOS) {
-      directory = await getApplicationDocumentsDirectory();
-    }
-
-    if (directory == null) {
-      throw Exception('Could not get Downloads directory');
+    // Let user select the folder
+    String? selectedDirectory = await FilePicker.platform.getDirectoryPath();
+    if (selectedDirectory == null) {
+      Get.snackbar(
+        'Error',
+        'No folder selected!',
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+        snackPosition: SnackPosition.BOTTOM,
+      );
+      return;
     }
 
     // Define the file path
-    String filePath = '${directory.path}/$fileName';
+    String filePath = '$selectedDirectory/$fileName';
 
     // Start downloading
     isDownloading.value = true;
@@ -226,6 +225,80 @@ class PdfViewController extends GetxController {
       );
     }
   }
+  Future<void> downloadApk(
+      String url,
+      String fileName, {
+        Function(int received, int total)? onProgress,
+      }) async {
+    // Ensure file has .apk extension
+    if (!fileName.toLowerCase().endsWith('.apk')) {
+      fileName += '.apk';
+    }
+
+    // Request storage permission (for Android)
+    if (Platform.isAndroid) {
+      bool permissionGranted = await requestStoragePermission();
+      if (!permissionGranted) {
+        throw Exception('Storage permission not granted');
+      }
+    }
+
+    // Let the user pick a folder
+    String? selectedDirectory = await FilePicker.platform.getDirectoryPath();
+
+    if (selectedDirectory == null) {
+      // User did not select a folder, handle this scenario
+      Get.snackbar(
+        'Error',
+        'No folder selected!',
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+        snackPosition: SnackPosition.BOTTOM,
+      );
+      return;
+    }
+
+    // Build the file path with the chosen directory and the file name
+    String filePath = '$selectedDirectory/$fileName';
+
+    try {
+      Dio dio = Dio();
+      await dio.download(
+        url,
+        filePath, // Save the file to the chosen folder
+        onReceiveProgress: (receivedBytes, totalBytes) {
+          // Call the onProgress callback if it is provided
+          if (onProgress != null && totalBytes > 0) {
+            onProgress(receivedBytes, totalBytes); // Pass progress to the callback
+          }
+        },
+      );
+
+      // Show success feedback
+      Get.snackbar(
+        'Success',
+        'File downloaded to $filePath',
+        backgroundColor: Colors.green,
+        colorText: Colors.white,
+        snackPosition: SnackPosition.BOTTOM,
+      );
+    } catch (e) {
+      // Handle download error
+      Get.snackbar(
+        'Error',
+        'Failed to download file: $e',
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+        snackPosition: SnackPosition.BOTTOM,
+      );
+    }
+  }
+
+
+}
+
+
+
 
 
 
@@ -329,7 +402,7 @@ class PdfViewController extends GetxController {
 //   }
 // }
 
-}
+
 
 // Function to download file from URL
 //   Future<void> downloadFile(String url, String fileName) async {

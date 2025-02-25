@@ -38,7 +38,7 @@ flutter_native_splash:
 
 
 publish_to: 'Playstore'
-version: 1.0.1+2
+version: 1.0.2
 
 environment:
   sdk: '>=3.0.6 <4.0.0'
@@ -63,10 +63,6 @@ dependencies:
   path_provider: ^2.0.0 # For getting the storage directory
   permission_handler: ^10.0.0 # For handling permissions
   device_info_plus: ^9.0.2
-
-
-
-
 
   # Icons
   iconsax: ^0.0.8
@@ -108,8 +104,6 @@ dependencies:
   path: ^1.8.3
   package_info_plus: ^4.2.0
   open_file: ^3.3.2
-
-
 
 
   #--------------- ./ PACKAGES END ------------------#

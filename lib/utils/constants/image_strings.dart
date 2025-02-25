@@ -13,7 +13,7 @@ class TImages {
   static const String facebook = "assets/logos/facebook-icon.png";
   static const String googleLogo = "assets/logos/google-icon.png";
   static const String vodacom = "assets/logos/vodacom.png";
-  static const String tigopesa = "assets/logos/tigopesa.png";
+  static const String tigopesa = "assets/logos/yas.png";
   static const String airtel = "assets/logos/airtel.png";
   static const String halopesa = "assets/logos/halopesa.jpg";
 
@@ -52,7 +52,7 @@ class TImages {
   static const String noBooks = "assets/logos/no-books.json";
 
 
-  static const String user1 = "assets/images/users/profile-pastory.jpg";
+  static const String user1 = "assets/images/users/img.png";
   static const String resetEmail = "assets/images/animations/reset-password.json";
 
 

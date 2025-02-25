@@ -44,9 +44,9 @@ class CheckoutController extends GetxController {
             children: [
               const TSectionHeading(title: 'Select Payment Method', showActionButton: false),
               const SizedBox(height: TSizes.spaceBtwSections),
-              TPaymentTile(paymentMethod: PaymentMethodModel(name: 'Mpesa', image: TImages.vodacom)),
+              TPaymentTile(paymentMethod: PaymentMethodModel(name: 'M-PESA', image: TImages.vodacom)),
                const SizedBox(height: TSizes.spaceBtwItems/2),
-              TPaymentTile(paymentMethod: PaymentMethodModel(name: 'Tigo', image: TImages.tigopesa)),
+              TPaymentTile(paymentMethod: PaymentMethodModel(name: 'Mixx by Yas', image: TImages.tigopesa)),
               const SizedBox(height: TSizes.spaceBtwItems/2),
               TPaymentTile(paymentMethod: PaymentMethodModel(name: 'Airtel', image: TImages.airtel)),  const SizedBox(height: TSizes.spaceBtwItems/2),
               TPaymentTile(paymentMethod: PaymentMethodModel(name: 'Halopesa', image: TImages.halopesa)),
